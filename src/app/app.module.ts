@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ButtonComponent } from './button/button.component';
+import { SelectionListComponent } from './selection-list/selection-list.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -17,7 +18,8 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     SharedComponent,
     DashboardComponent,
-    ButtonComponent
+    ButtonComponent,
+    SelectionListComponent
   ],
   imports: [
     BrowserModule,
@@ -28,5 +30,4 @@ import { SharedModule } from './shared/shared.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-
-export class AppModule { }
+export class AppModule {}

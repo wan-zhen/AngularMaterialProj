@@ -6,10 +6,18 @@
   <!--<button mat-raised-button (click)='toggleSideNav(sideNav)'>fuction Toggle</button>-->
   <a routerLink="/dashboard" mat-button>dashboard</a>
   <a routerLink="/button" mat-button>button</a>
+  <a routerLink="/selectionList" mat-button>selectionList</a>
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sideNav (opened)='opened()' (closed)='closed()' mode='over'>
-    左選單
+    <mat-nav-list>
+      <a [routerLink]="['/', 'dashboard']" mat-list-item>dashboard</a>
+      <a [routerLink]="['/', 'button']" mat-list-item>button</a>
+      <a [routerLink]="['/', 'selectionList']" mat-list-item>selectionList</a>
+      <mat-divider></mat-divider>
+      <h3 mat-subheader>sub header</h3>
+      <a [routerLink]="['/']" mat-list-item>link list04</a>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav opened='true' mode='side' position='end'>
     右選單
