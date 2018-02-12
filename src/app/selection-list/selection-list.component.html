@@ -1,6 +1,64 @@
-<p>
-  selection-list works!
-</p>
+<h3>
+  menu
+</h3>
+<div>
+  <!--設定[overlapTrigger]="false"，如此一來，選單就永遠不會遮住我們的trigger-->
+  <mat-menu #listMenu='matMenu' [overlapTrigger]="false">
+    <button mat-menu-item>dashboard</button>
+    <button mat-menu-item>button</button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]='listMenu' #menuTrigger='matMenuTrigger'>
+    <mat-icon>message</mat-icon>
+  </button>
+  <!--過matMenuTriggerFor來設定這個按鈕會觸發哪一個menu元件-->
+  <button mat-button (click)="menuTrigger.toggleMenu()">開啟menu</button>
+</div>
+
+<div style="text-align:center">
+  <button mat-raised-button [matMenuTriggerFor]="positionMenu">開啟訊息設定，這是一條比較長的按鈕，好確認Menu的生長方向</button>
+  <mat-menu #positionMenu="matMenu" xPosition='before' yPosition='above' [overlapTrigger]="false">
+    <button mat-menu-item>訊息1</button>
+    <button mat-menu-item>訊息2</button>
+  </mat-menu>
+</div>
+<!--巢狀選單demo-->
+<div>
+  <button mat-raised-button [matMenuTriggerFor]="mainMenu">巢狀選單demo</button>
+  <mat-menu #mainMenu="matMenu" [overlapTrigger]="false">
+    <button mat-menu-item [matMenuTriggerFor]="subMenu1">訊息1</button>
+    <button mat-menu-item [matMenuTriggerFor]="subMenu2">訊息2</button>
+    <button mat-menu-item>訊息3</button>
+  </mat-menu>
+
+  <mat-menu #subMenu1="matMenu">
+    <button mat-menu-item>
+    <mat-icon>person</mat-icon>
+    訊息 1-1
+  </button>
+    <button mat-menu-item>
+    <mat-icon>favorite</mat-icon>
+    訊息 1-2
+  </button>
+    <button mat-menu-item>
+    <mat-icon>thumb_up</mat-icon>
+    訊息 1-3
+  </button>
+  </mat-menu>
+
+  <mat-menu #subMenu2="matMenu">
+    <button mat-menu-item>
+    <mat-icon>delete</mat-icon>
+    訊息 2-1
+  </button>
+    <button mat-menu-item disabled>
+    <mat-icon>settings</mat-icon>
+    訊息 2-2
+  </button>
+  </mat-menu>
+</div>
+<h3>
+  list
+</h3>
 <mat-list>
   <mat-list-item>list01</mat-list-item>
   <mat-list-item>list02</mat-list-item>

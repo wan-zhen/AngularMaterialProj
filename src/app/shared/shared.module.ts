@@ -6,7 +6,8 @@ import {
   MatButtonToggleModule,
   MatSidenavModule,
   MatToolbarModule,
-  MatListModule
+  MatListModule,
+  MatMenuModule
 } from '@angular/material';
 
 // 共用模組
@@ -18,7 +19,8 @@ import {
     MatButtonToggleModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule
   ],
   // 再export
   exports: [
@@ -27,7 +29,8 @@ import {
     MatButtonToggleModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule
   ]
 })
 export class SharedModule {}
