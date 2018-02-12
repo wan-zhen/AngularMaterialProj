@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ButtonComponent } from './button/button.component';
 import { SelectionListComponent } from './selection-list/selection-list.component';
+import { StepperComponent } from './stepper/stepper.component';
 const routes: Routes = [
   {
     path: 'dashboard',
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'selectionList',
     component: SelectionListComponent
+  },
+  {
+    path: 'stepper',
+    component: StepperComponent
   }
 ];
 

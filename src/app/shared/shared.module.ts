@@ -7,7 +7,8 @@ import {
   MatSidenavModule,
   MatToolbarModule,
   MatListModule,
-  MatMenuModule
+  MatMenuModule,
+  MatStepperModule
 } from '@angular/material';
 
 // 共用模組
@@ -20,7 +21,8 @@ import {
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatStepperModule
   ],
   // 再export
   exports: [
@@ -30,7 +32,8 @@ import {
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatStepperModule
   ]
 })
 export class SharedModule {}

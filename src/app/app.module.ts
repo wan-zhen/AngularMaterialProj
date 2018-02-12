@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ButtonComponent } from './button/button.component';
 import { SelectionListComponent } from './selection-list/selection-list.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -19,7 +20,8 @@ import { SharedModule } from './shared/shared.module';
     SharedComponent,
     DashboardComponent,
     ButtonComponent,
-    SelectionListComponent
+    SelectionListComponent,
+    StepperComponent
   ],
   imports: [
     BrowserModule,
