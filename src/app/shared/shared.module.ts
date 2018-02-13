@@ -8,9 +8,11 @@ import {
   MatToolbarModule,
   MatListModule,
   MatMenuModule,
-  MatStepperModule
+  MatStepperModule,
+  MatFormFieldModule,
+  MatInputModule
 } from '@angular/material';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // 共用模組
 @NgModule({
   // 先import
@@ -22,7 +24,11 @@ import {
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
-    MatStepperModule
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   // 再export
   exports: [
@@ -33,7 +39,11 @@ import {
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
-    MatStepperModule
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule {}

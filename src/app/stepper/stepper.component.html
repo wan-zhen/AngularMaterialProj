@@ -12,15 +12,34 @@
     <h4>Step3 Content</h4>
   </mat-step>
 </mat-horizontal-stepper>
-
-<mat-vertical-stepper>
-  <mat-step label="Step1">
-    <h4>Step1 Content</h4>
+<button mat-button (click)="isLinear=!isLinear">switch Linear</button>
+<!--linear屬性可以設定，這個屬性設定後，如果step內的表單是invalid的話，就會無法前進到下一步-->
+<mat-vertical-stepper [linear]="isLinear">
+  <!--stepControl這個設定是用來讓整個step知道要以哪個form group的valid狀態來決定是否可以進到下一步-->
+  <mat-step [stepControl]="basicFormGroup">
+    <form [formGroup]="basicFormGroup">
+      <ng-template matStepLabel>
+        <u>Step1</u>
+      </ng-template>
+      <h4>Step1 Content</h4>
+      <mat-form-field>
+        <input name="name" matInput placeholder="name" formControlName="name" required>
+      </mat-form-field>
+    </form>
+    <button mat-button matStepperNext>Next</button>
   </mat-step>
-  <mat-step label="Step2">
+  <!--設定optinoal屬性，設定了這個屬性後，會在這個step的label下出現一個灰色的optional提示-->
+  <!--預設下，每個step都是可以被編輯的狀態，不過若是希望這個狀態不可以利用「上一步」切回來編輯，可以設定editable="false"-->
+  <mat-step label="Step2" optional editable="false">
+    <ng-template matStepLabel>
+      <em>Step2</em>
+    </ng-template>
     <h4>Step2 Content</h4>
+    <button mat-button matStepperPrevious>Preview</button>
+    <button mat-button matStepperNext>Next</button>
   </mat-step>
   <mat-step label="Step3">
     <h4>Step3 Content</h4>
+    <button mat-button matStepperPrevious>Preview</button>
   </mat-step>
 </mat-vertical-stepper>

@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   constructor() {}
   ngOnInit() {}
   toggleSideNav(sideNav: MatSidenav) {
-    sideNav.toggle().then((result: MatDrawerToggleResult) => {
+    sideNav.toggle().then((result: any) => {
       console.log(result);
       console.log(`選單狀態：${result.type}`);
     });
