@@ -6,6 +6,8 @@ import {
   Validators
 } from '@angular/forms';
 import { MatStepperIntl } from '@angular/material';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 // 自訂optional label文字內容
 // Angular Material使用MatStepperIntl來設定optional文字內容，
 // 其中的optionalLabel就是用來設定顯示文字的，
@@ -24,11 +26,22 @@ export class TwStepperIntl extends MatStepperIntl {
 export class StepperComponent implements OnInit {
   isLinear: boolean;
   basicFormGroup: FormGroup;
-  constructor() {
+  intro: string;
+  countries$: Observable<any[]>;
+
+  constructor(private httpClient: HttpClient) {
     this.basicFormGroup = new FormGroup({
-      name: new FormControl('', Validators.required)
+      name: new FormControl('', Validators.required),
+      intro: new FormControl('', [
+        Validators.required,
+        Validators.minLength(5)
+      ]),
+      country: new FormControl('')
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.countries$ = this.httpClient.get<any[]>('assets/countries.json');
+    console.log(this.countries$);
+  }
 }
