@@ -14,7 +14,8 @@ import {
   MatAutocompleteModule,
   MatDatepickerModule,
   MAT_DATE_LOCALE,
-  MAT_DATE_FORMATS
+  MAT_DATE_FORMATS,
+  MatSelectModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -48,7 +49,8 @@ export const TW_FORMATS = {
     MatAutocompleteModule,
     HttpClientModule,
     MatDatepickerModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    MatSelectModule
   ],
   // 再export
   exports: [
@@ -67,7 +69,8 @@ export const TW_FORMATS = {
     MatAutocompleteModule,
     HttpClientModule,
     MatDatepickerModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    MatSelectModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'zh-TW' },
