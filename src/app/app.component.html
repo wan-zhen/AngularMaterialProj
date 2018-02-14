@@ -8,6 +8,7 @@
   <a routerLink="/button" mat-button>button</a>
   <a routerLink="/selectionList" mat-button>selectionList</a>
   <a routerLink="/stepper" mat-button>stepper</a>
+  <a routerLink="/form" mat-button>form</a>
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sideNav (opened)='opened()' (closed)='closed()' mode='over'>
@@ -16,6 +17,7 @@
       <a [routerLink]="['/', 'button']" mat-list-item>button</a>
       <a [routerLink]="['/', 'selectionList']" mat-list-item>selectionList</a>
       <a [routerLink]="['/', 'stepper']" mat-list-item>stepper</a>
+      <a [routerLink]="['/', 'form']" mat-list-item>form</a>
       <mat-divider></mat-divider>
       <h3 mat-subheader>sub header</h3>
       <a [routerLink]="['/']" mat-list-item>link list04</a>

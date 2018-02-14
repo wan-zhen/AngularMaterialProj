@@ -11,10 +11,24 @@ import {
   MatStepperModule,
   MatFormFieldModule,
   MatInputModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatDatepickerModule,
+  MAT_DATE_LOCALE,
+  MAT_DATE_FORMATS
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+
+export const TW_FORMATS = {
+  parse: {
+    dateInput: 'YYYY/MM/DD'
+  },
+  display: {
+    dateInput: 'YYYY/MM/DD',
+    monthYearLabel: 'YYYY MMM'
+  }
+};
 // 共用模組
 @NgModule({
   // 先import
@@ -32,7 +46,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatMomentDateModule
   ],
   // 再export
   exports: [
@@ -49,7 +65,13 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatMomentDateModule
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'zh-TW' },
+    { provide: MAT_DATE_FORMATS, useValue: TW_FORMATS }
   ]
 })
 export class SharedModule {}

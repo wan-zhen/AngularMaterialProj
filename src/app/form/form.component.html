@@ -1,0 +1,10 @@
+<mat-form-field>
+  <input type='text' name='birthday' matInput placeholder="birthday" [matDatepicker]='birthdayPicker' [min]='minDate' [max]='maxDate'
+    [matDatepickerFilter]='fridayFilter' (dateInput)='logDateInput($event)' (dateChange)='logDateChange($event)' disabled/>
+  <mat-datepicker-toggle [for]='birthdayPicker' matSuffix></mat-datepicker-toggle>
+  <!--startView屬性設定為"year"(預設為month)，則會先出現一整年的可選月份-->
+  <!--<mat-datepicker #birthdayPicker startView='year'></mat-datepicker>-->
+  <!--把input的狀態設為disabled，這時原本是不可以輸入，也沒有picker可以用的，而這時候我們可以把mat-datepicker的disabled狀態設為false，就會變成picker可以使用的狀態囉-->
+  <!--<mat-datepicker>設定touchUi，就會變成適合觸控式裝置的模式-->
+  <mat-datepicker #birthdayPicker [startAt]='startDate' disabled='false' touchUi='true'></mat-datepicker>
+</mat-form-field>

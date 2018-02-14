@@ -12,7 +12,7 @@
     <h4>Step3 Content</h4>
   </mat-step>
 </mat-horizontal-stepper>
-<button mat-button (click)="isLinear=!isLinear">switch Linear</button>
+<button mat-button color='primary' (click)="isLinear=!isLinear">switch Linear</button>
 <!--linear屬性可以設定，這個屬性設定後，如果step內的表單是invalid的話，就會無法前進到下一步-->
 <mat-vertical-stepper [linear]="isLinear">
   <!--stepControl這個設定是用來讓整個step知道要以哪個form group的valid狀態來決定是否可以進到下一步-->
@@ -43,6 +43,7 @@
     <button mat-button matStepperPrevious>Preview</button>
   </mat-step>
 </mat-vertical-stepper>
+<h3>form field</h3>
 <form [formGroup]="basicFormGroup">
   <div>
     <mat-form-field>
@@ -63,6 +64,7 @@
       <mat-error *ngIf="basicFormGroup.get('basicFormGroup').get('intro').hasError('minlength')">min 5 chart</mat-error>-->
     </mat-form-field>
   </div>
+  <h3>auto complete</h3>
   <div>
     <mat-form-field>
       <input type="text" name="country" matInput placeholder="國家" formControlName="country" [matAutocomplete]="countries" />

@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ButtonComponent } from './button/button.component';
 import { SelectionListComponent } from './selection-list/selection-list.component';
 import { StepperComponent } from './stepper/stepper.component';
+import { FormComponent } from './form/form.component';
 const routes: Routes = [
   {
     path: 'dashboard',
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'stepper',
     component: StepperComponent
+  },
+  {
+    path: 'form',
+    component: FormComponent
   }
 ];
 

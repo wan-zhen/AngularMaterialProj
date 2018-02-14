@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedComponent } from './shared/shared.component';
 import { SharedModule } from './shared/shared.module';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SharedModule } from './shared/shared.module';
     DashboardComponent,
     ButtonComponent,
     SelectionListComponent,
-    StepperComponent
+    StepperComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
