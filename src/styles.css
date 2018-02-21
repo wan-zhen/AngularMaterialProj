@@ -6,3 +6,12 @@
 body {
     margin: 0;
 }
+
+mat-toolbar a.active {
+    color: #525252;
+}
+
+ui-view {
+    display: block;
+    min-height: 400px;
+}

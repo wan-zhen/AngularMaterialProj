@@ -4,30 +4,45 @@
      <mat-icon>{{sideNav.opened ? 'close' : 'menu'}}</mat-icon>
    </button>
   <!--<button mat-raised-button (click)='toggleSideNav(sideNav)'>fuction Toggle</button>-->
-  <a routerLink="/dashboard" mat-button>dashboard</a>
+  <!--<a routerLink="/dashboard" mat-button>dashboard</a>
   <a routerLink="/button" mat-button>button</a>
   <a routerLink="/selectionList" mat-button>selectionList</a>
   <a routerLink="/stepper" mat-button>stepper</a>
-  <a routerLink="/form" mat-button>form</a>
+  <a routerLink="/form" mat-button>form</a>-->
+  <a uiSref="dashboard" uiSrefActive="active" mat-button>dashboard</a>
+  <a uiSref="button" uiSrefActive="active" mat-button>button</a>
+  <a uiSref="selectionList" uiSrefActive="active" mat-button>selectionList</a>
+  <a uiSref="stepper" uiSrefActive="active" mat-button>stepper</a>
+  <a uiSref="form" uiSrefActive="active" mat-button>form</a>
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sideNav (opened)='opened()' (closed)='closed()' mode='over'>
     <mat-nav-list>
-      <a [routerLink]="['/', 'dashboard']" mat-list-item>dashboard</a>
+      <!--<a [routerLink]="['/', 'dashboard']" mat-list-item>dashboard</a>
       <a [routerLink]="['/', 'button']" mat-list-item>button</a>
       <a [routerLink]="['/', 'selectionList']" mat-list-item>selectionList</a>
       <a [routerLink]="['/', 'stepper']" mat-list-item>stepper</a>
       <a [routerLink]="['/', 'form']" mat-list-item>form</a>
       <mat-divider></mat-divider>
       <h3 mat-subheader>sub header</h3>
-      <a [routerLink]="['/']" mat-list-item>link list04</a>
+      <a [routerLink]="['/']" mat-list-item>link list04</a>-->
+      <a uiSref="dashboard" uiSrefActive="active" mat-list-item>dashboard</a>
+      <a uiSref="button" uiSrefActive="active" mat-list-item>button</a>
+      <a uiSref="selectionList" uiSrefActive="active" mat-list-item>selectionList</a>
+      <mat-divider></mat-divider>
+      <h3 mat-subheader>sub header</h3>
+      <a uiSref="stepper" uiSrefActive="active" mat-list-item>stepper</a>
+      <a uiSref="form" uiSrefActive="active" mat-list-item>form</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav opened='true' mode='side' position='end'>
     右選單
   </mat-sidenav>
   <mat-sidenav-content>
-    <router-outlet></router-outlet>
+    <!--<router-outlet></router-outlet>  原生路由 -->
+
+    <!-- ui router 切出來的component -->
+    <ui-view></ui-view>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
