@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector, Injectable } from '@angular/core';
 // 路由
 // import { AppRoutingModule } from './app-routing.module';
 
@@ -16,7 +16,9 @@ import { SharedModule } from './shared/shared.module';
 import { FormComponent } from './form/form.component';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { UIRouterModule } from '@uirouter/angular';
+import { UIRouterModule, UIRouter } from '@uirouter/angular';
+import { StateTree } from '@uirouter/visualizer';
+import { PeopleService } from '../shared/people.service';
 
 const dashboard = { name: 'dashboard', url: '/dashboard', component: DashboardComponent };
 const button = { name: 'button', url: '/button', component: ButtonComponent };
@@ -39,9 +41,29 @@ const form = { name: 'form', url: '/form', component: FormComponent };
     // AppRoutingModule, 原生路由
     BrowserAnimationsModule,
     SharedModule, // 抽共用 Material 模組用
-    UIRouterModule.forRoot({ states: [dashboard, button, selectionList, stepper, form], useHash: false })
+    UIRouterModule.forRoot(
+      {
+        states: [dashboard, button, selectionList, stepper, form],
+        useHash: false,
+        config: uiRouterConfigFn
+      }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+/** UIRouter Config */
+export function uiRouterConfigFn(router: UIRouter, injector: Injector) {
+  // const peopleService = injector.get(PeopleService);
+
+  // peopleService.getAllPeople();
+
+  // If no URL matches, go to the `dashboard` state by default
+  router.urlService.rules.otherwise({ state: 'dashboard' });
+
+  console.log(document.getElementById('statetree'));
+  // Use ui-router-visualizer to show the states as a tree
+  StateTree.create(router, document.getElementById('statetree'), { width: 400, height: 300 });
+}

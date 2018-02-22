@@ -8,7 +8,7 @@ body {
 }
 
 mat-toolbar a.active {
-    color: #525252;
+    color: #ff0;
 }
 
 ui-view {

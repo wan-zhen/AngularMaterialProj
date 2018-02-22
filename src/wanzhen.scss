@@ -21,3 +21,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 .wanzhen-dark-theme {
     @include angular-material-theme($dark-theme);
 }
+
+.wanzhen-candy-theme {
+    @include angular-material-theme($candy-app-theme);
+}
