@@ -1,0 +1,11 @@
+<p>
+  people works!
+</p>
+<h3>some People</h3>
+<ul>
+  <li *ngFor='let person of people'>
+    <a mat-button color='primary' uiSref='person' [uiParams]='{personId:person.id}'>
+      {{person.name}}
+    </a>
+  </li>
+</ul>
